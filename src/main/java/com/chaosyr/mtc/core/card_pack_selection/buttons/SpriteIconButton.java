@@ -77,9 +77,11 @@ public class SpriteIconButton extends AbstractWidget {
                 20,
                 20,
                 20,
-                20
+                20,
+                net.minecraft.util.ARGB.color(this.alpha, -1)
         );
     }
+
 
     /**
      * The Action we take when the Button is Pressed.

@@ -11,10 +11,14 @@ import net.minecraft.resources.Identifier;
  * This is a class for registering the Card Pack Selection Button and its Screens.
  */
 public class CardPackSelectionButton {
+    private static boolean ranOnce = false;
     /**
      * A function that registers our Buttons.
      */
     public static void registerButtons() {
+        if (ranOnce) {
+            return;
+        }
         SpriteIconButton myButton = new SpriteIconButton(
                 0,
                 0,
@@ -35,5 +39,6 @@ public class CardPackSelectionButton {
         );
 
         IconButtonsAPIButtons.addTitleScreenButton(myButton, () -> Minecraft.getInstance().gui.screen() instanceof TitleScreen);
+        ranOnce = true;
     }
 }
