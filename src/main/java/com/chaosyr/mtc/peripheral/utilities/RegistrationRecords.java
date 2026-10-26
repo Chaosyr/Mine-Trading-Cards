@@ -1,4 +1,4 @@
-package com.creator.mtc.utilities;
+package com.chaosyr.mtc.peripheral.utilities;
 
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.Item;

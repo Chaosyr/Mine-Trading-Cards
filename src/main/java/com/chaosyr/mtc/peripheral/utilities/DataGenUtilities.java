@@ -1,6 +1,6 @@
-package com.creator.mtc.utilities;
+package com.chaosyr.mtc.peripheral.utilities;
 
-import com.creator.mtc.Main;
+import com.chaosyr.mtc.MineTradingCardsShared;
 import net.minecraft.client.data.models.BlockModelGenerators;
 import net.minecraft.client.data.models.ItemModelGenerators;
 import net.minecraft.client.data.models.ModelProvider;
@@ -23,7 +23,7 @@ import java.util.List;
 /**
  * This is a class that handles the underlying DataGenUtilities
  */
-@EventBusSubscriber(modid = Main.MODID)
+@EventBusSubscriber(modid = MineTradingCardsShared.GUID)
 public class DataGenUtilities {
     /**
      * Grabs the Client Data and shoves our Generators in.
@@ -47,7 +47,7 @@ class MTCModelProvider extends ModelProvider {
      * @param output A {@link PackOutput} which is associated with the mod's DataGenerator as used in {@link DataGenUtilities}.
      */
     public MTCModelProvider (PackOutput output) {
-        super(output, Main.MODID);
+        super(output, MineTradingCardsShared.GUID);
     }
 
     /**
@@ -76,7 +76,7 @@ class MTCLanguageProvider extends LanguageProvider {
      * @param output A {@link PackOutput} which is associated with the mod's DataGenerator as used in {@link DataGenUtilities}.
      */
     public MTCLanguageProvider (PackOutput output) {
-        super(output, Main.MODID, "en_us");
+        super(output, MineTradingCardsShared.GUID, "en_us");
     }
 
     /**
@@ -109,7 +109,7 @@ class DataGenLangFunctions {
     public static List<DataGenField> DataGenBlocks(List<DeferredHolder<Block, ? extends Block>> blocks) {
         List<DataGenField> fields = new ArrayList<>();
         for (var block : blocks) {
-            fields.add(new DataGenField(String.format("%s.%s.%s", "block", Main.MODID, block.getRegisteredName()), StringExtenders.convertToPlainLang(block.getRegisteredName())));
+            fields.add(new DataGenField(String.format("%s.%s.%s", "block", MineTradingCardsShared.GUID, block.getRegisteredName()), StringExtenders.convertToPlainLang(block.getRegisteredName())));
         }
         return fields;
     }
@@ -122,7 +122,7 @@ class DataGenLangFunctions {
     public static List<DataGenField> DataGenItems(List<DeferredHolder<Item, ? extends Item>> items) {
         List<DataGenField> fields = new ArrayList<>();
         for (var item : items) {
-            fields.add(new DataGenField(String.format("%s.%s.%s", "item", Main.MODID, item.getRegisteredName()), StringExtenders.convertToPlainLang(item.getRegisteredName())));
+            fields.add(new DataGenField(String.format("%s.%s.%s", "item", MineTradingCardsShared.GUID, item.getRegisteredName()), StringExtenders.convertToPlainLang(item.getRegisteredName())));
         }
         return fields;
     }
@@ -135,7 +135,7 @@ class DataGenLangFunctions {
     public static List<DataGenField> DataGenTabs (List<DeferredHolder<CreativeModeTab, ? extends CreativeModeTab>> tabs) {
         List<DataGenField> fields = new ArrayList<>();
         for (var tab : tabs) {
-            fields.add(new DataGenField(String.format("%s.%s.%s", "itemGroup", Main.MODID, tab.getRegisteredName()), StringExtenders.convertToPlainLang(tab.getRegisteredName())));
+            fields.add(new DataGenField(String.format("%s.%s.%s", "itemGroup", MineTradingCardsShared.GUID, tab.getRegisteredName()), StringExtenders.convertToPlainLang(tab.getRegisteredName())));
         }
         return fields;
     }
@@ -156,7 +156,7 @@ class StringExtenders {
         for (String stringPart : stringParts) {
             String firstChar = "";
             if (stringPart.isEmpty()) {
-                Main.LOGGER.warn("Hey, when converting the following string, there was consecutive underscores: " + string);
+                MineTradingCardsShared.LOGGER.warn("Hey, when converting the following string, there was consecutive underscores: " + string);
                 continue;
             }
             firstChar = stringPart.substring(0, 1).toUpperCase();

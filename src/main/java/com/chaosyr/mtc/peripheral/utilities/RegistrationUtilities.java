@@ -1,13 +1,11 @@
-package com.creator.mtc.utilities;
+package com.chaosyr.mtc.peripheral.utilities;
 
-import com.creator.mtc.Main;
+import com.chaosyr.mtc.MineTradingCardsShared;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
-import net.neoforged.api.distmarker.Dist;
-import net.neoforged.fml.common.EventBusSubscriber;
 import net.neoforged.neoforge.registries.DeferredBlock;
 import net.neoforged.neoforge.registries.DeferredHolder;
 import net.neoforged.neoforge.registries.DeferredItem;
@@ -22,15 +20,15 @@ public class RegistrationUtilities {
     /**
      * This is our registry of {@link DeferredRegister.Blocks} for the mod, basically where all the Blocks are stored.
      */
-    public static final DeferredRegister.Blocks BLOCKS = DeferredRegister.createBlocks(Main.MODID);
+    public static final DeferredRegister.Blocks BLOCKS = DeferredRegister.createBlocks(MineTradingCardsShared.GUID);
     /**
      * This is our registry of {@link DeferredRegister.Items} for the mod, basically where all the Items are stored.
      */
-    public static final DeferredRegister.Items ITEMS = DeferredRegister.createItems(Main.MODID);
+    public static final DeferredRegister.Items ITEMS = DeferredRegister.createItems(MineTradingCardsShared.GUID);
     /**
      * This is our registry of {@link DeferredRegister DeferredRegister&lt;CreativeModeTab&gt;} for the mod, basically where all the Creative Mode Tabs are stored.
      */
-    public static final DeferredRegister<CreativeModeTab> CREATIVE_MODE_TABS = DeferredRegister.create(Registries.CREATIVE_MODE_TAB, Main.MODID);
+    public static final DeferredRegister<CreativeModeTab> CREATIVE_MODE_TABS = DeferredRegister.create(Registries.CREATIVE_MODE_TAB, MineTradingCardsShared.GUID);
 
     /**
      * This function handles the Registry of Blocks (phase 1), it is essentially a function that handles registering multiple blocks in one go.

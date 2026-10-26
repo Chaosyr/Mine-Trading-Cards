@@ -1,0 +1,17 @@
+
+{
+  "required": true,
+  "minVersion": "0.8",
+  "mixinextras": {"minVersion": "0.5.5"},
+  "package": "com.chaosyr.mtc.core.icon_buttons_api_by_trivait.mixins",
+  "compatibilityLevel": "JAVA_25",
+  "refmap": "mine_trading_cards.refmap.json",
+  "client": [
+    "AddCustomMenuButtonToTitle",
+    "AddCustomMenuButtonToPause",
+    "ScreenAccessor"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}
